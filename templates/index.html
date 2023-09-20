@@ -1,38 +1,59 @@
 <html>
-<head>
-<style>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@12..96&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                text-align: center;
+                margin-top: 50px;
+                font-size: 30px;
+                background-color: deepskyblue;
+            }
+            h1 {
+                color: white;
+                font-family: 'Black Ops One', cursive;
+            }
+            h3{
+                font-family: 'Tektur', cursive;
+            }
+            #eqn, #res{
+                font-family: 'Bricolage Grotesque', sans-serif;
+                font-size: 25;
+            }
+            input[type="submit"]{
+                background-color: lawngreen;
+                color: black;
+                margin: 4px 2px;
+            }
+            footer{
+                font-family: 'Changa', sans-serif;
+                background-color: white;
+                text-align: center;
+                color: black;
+                font-size: 15;
+            }
+        </style>
+    </head>
 
-    body {
-        text-align: center;
-        margin-top: 50px;
-        font-size: 25px;
-        background-color: darkslategrey;
-
-    }
-
-    h1 {
-        color: skyblue;
-    }
-
-</style>
-</head>
-
-<!--##NO predefine-->
-<body>
-    <h1>Advance Calculator!</h1>  <br>
-    <img width="20%" height="20%" src="{{url_for('static', filename='img.png') }} " />
-    <form method="POST">
-        <label >Enter expression</label><br><br>
-        <select class="is-focused is-large" name="operation" aria-label="operationDropdown">
-            <option>Choose operation</option>
-            <option value="simplify">Simplify</option>
-            <option value="factor">Factor</option>
-        </select>
-    <input placeholder="Expression" name="text">
-    <input type="submit">
-</form>
-
-
-    <p>Your equation is {{equation}} = {{ result }}</p>
-</body>
+    <!--##NO predefine-->
+    <body>
+        <h1>Advanced Calculator</h1>
+        <hr><br>
+        <img height="40%" width="40%" src="{{url_for('static', filename='img.png') }} ">
+        <form method=POST>
+            <h3><b>Enter Expression:</b></h3>
+            <select class="is-focused is-large" name="operation" aria-label="operationDropdown">
+                <option value="none">Select Operation</option>
+                <option value="simplify">Simplify</option>
+                <option value="factor">Factor</option>
+            </select>
+            <input placeholder="Expression" name="text">
+            <input type="submit">
+        </form>
+        <p id="ansp"><b>Your equation is:<b> <label id="eqn">{{equation}}</label> = <label id="res">{{result}}</label></p>
+        <br><hr>
+        <footer>Brought to you by: Lekhraj H. Jain, Whitehat Jr | CREDITS: WhiteHat Jr, Google Fonts, pinimg.com</footer>
+    </body>
 </html>
